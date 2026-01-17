@@ -14,50 +14,20 @@
     max-width: 600px;
 }
 
-.about-title {
-    display: flex;
-    flex-direction: column;
-    font-weight: 900;
-    line-height: 0.8;
-    /* Even tighter line height */
-    margin-bottom: var(--spacing-lg);
-}
-
-.title-small {
-    font-size: var(--font-size-2xl);
-    color: var(--color-text);
-    margin-left: 5px;
-    margin-bottom: 0;
-}
-
-.title-outline {
-    font-size: 8rem;
-    /* Much bigger size for DIGITAL */
-    color: transparent;
-    -webkit-text-stroke: 2px var(--color-text);
-    letter-spacing: -0.04em;
-    margin-left: -5px;
-}
-
-.title-gradient {
-    font-size: 6rem;
-    /* Bigger size for MARKETING */
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-top: -10px;
+.about-text .display-title {
+    text-align: left;
+    align-items: flex-start;
 }
 
 .about-description {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .about-description p {
     font-size: var(--font-size-base);
     color: var(--color-text-muted);
     line-height: 1.8;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     text-align: justify;
 }
 
@@ -158,6 +128,14 @@
 
     .about-text {
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text .display-title {
+        text-align: center;
+        align-items: center;
     }
 
     .about-features {
@@ -165,26 +143,20 @@
     }
 }
 
-@media (max-width: 768px) {
-    .title-outline {
-        font-size: 4.5rem;
-    }
-
-    .title-gradient {
-        font-size: 3.5rem;
-    }
-}
 
 @media (max-width: 576px) {
     .about-features {
         grid-template-columns: 1fr;
     }
+}
 
-    .title-outline {
-        font-size: 3.5rem;
+@media (max-width: 425px) {
+    .about-description p {
+        font-size: var(--font-size-sm);
+        text-align: center;
     }
 
-    .title-gradient {
-        font-size: 2.5rem;
+    .feature-card {
+        padding: var(--spacing-sm);
     }
 }

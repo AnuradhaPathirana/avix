@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     transition: all var(--transition-base);
     background: transparent;
 }
@@ -13,7 +13,7 @@
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    padding: 1rem 0;
+    padding: 0.75rem 0;
 }
 
 .navbar-content {
@@ -126,5 +126,27 @@
 
     .navbar-cta {
         display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    .navbar-logo {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar-logo {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar {
+        padding: 0.75rem 0;
     }
 }

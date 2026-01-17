@@ -154,3 +154,18 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 425px) {
+    .award-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .award-year {
+        font-size: 1.5em;
+    }
+
+    .award-title {
+        font-size: var(--font-size-base);
+    }
+}

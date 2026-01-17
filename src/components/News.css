@@ -169,13 +169,7 @@
 }
 
 @media (max-width: 1200px) {
-    .news-text .display-outline {
-        font-size: 4rem;
-    }
-
-    .news-text .display-gradient {
-        font-size: 3.5rem;
-    }
+    /* Titles now use global responsive sizes from index.css */
 }
 
 @media (max-width: 992px) {
@@ -185,13 +179,9 @@
     }
 
     .news-text {
-        align-items: center;
-        text-align: center;
-        order: -1;
         margin-bottom: var(--spacing-md);
-    }
-
-    .news-text .display-title {
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
 }
@@ -200,5 +190,48 @@
     .news-slide {
         flex: 0 0 100%;
         /* Show 1 item on mobile */
+    }
+}
+
+@media (max-width: 425px) {
+    .news-text .display-outline {
+        font-size: 2.8rem;
+    }
+
+    .news-text .display-gradient {
+        font-size: 2.2rem;
+    }
+
+    .news-image {
+        height: 180px;
+    }
+
+    .news-track-wrapper {
+        margin: -10px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .news-text .display-outline {
+        font-size: 3rem;
+    }
+
+    .news-text .display-gradient {
+        font-size: 2rem;
+    }
+
+    .news-content h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .news-text .display-outline {
+        font-size: 2.5rem;
+    }
+
+    .news-text .display-gradient {
+        font-size: 1.8rem;
     }
 }

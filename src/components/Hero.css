@@ -4,7 +4,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 .hero-background {
@@ -268,30 +268,97 @@
 @media (max-width: 992px) {
     .hero-content {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: 0;
+        /* Reduced gap since title is now absolute */
+        position: relative;
     }
 
     .hero-text {
         text-align: center;
         max-width: 100%;
+        order: 2;
+        /* Text comes after slider */
+        padding-top: var(--spacing-md);
+    }
+
+    .hero-slider-container {
+        height: 400px;
+        order: 1;
+        /* Slider comes first */
+        opacity: 1 !important;
+        /* Ensure it's visible if it was waiting for animation */
+    }
+
+    /* Absolute position badge and title on the image */
+    .hero-badge {
+        display: none;
+        /* Removed for mobile as requested */
+    }
+
+    .hero-display-title {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        margin-bottom: 0;
+        padding: 0 var(--spacing-sm);
+        align-items: center;
+        /* Center align for absolute positioning */
+    }
+
+    .hero-display-title .display-outline {
+        font-size: 3.6rem !important;
+        line-height: 0.5 !important;
+        -webkit-text-stroke: 1px var(--color-text);
+        /* Thinner stroke for mobile clarity */
+    }
+
+    .hero-display-title .display-gradient {
+        font-size: 2.3rem !important;
+        line-height: 1.7 !important;
+    }
+
+    .hero-display-title .display-small {
+        font-size: 2rem !important;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    /* Add dark overlay to slider image for text readability */
+    .hero-image-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(10, 10, 10, 0.6), transparent, rgba(10, 10, 10, 0.6));
+        z-index: 1;
+        pointer-events: none;
     }
 
     .hero-cta {
         justify-content: center;
     }
 
-    .hero-badge {
+    /* .hero-badge {
         margin-left: auto;
         margin-right: auto;
-    }
+    } */
+    /* Replaced by absolute positioning */
 
-    .hero-display-title {
+    /* .hero-display-title {
         align-items: center;
-    }
+    } */
+    /* Replaced by absolute positioning */
 
-    .hero-slider-container {
+    /* .hero-slider-container {
         height: 400px;
-    }
+    } */
+    /* Already defined above */
 
     .slider-navigation {
         right: 10px;
@@ -319,5 +386,61 @@
 
     .hero-slider-container {
         height: 300px;
+    }
+}
+
+@media (max-width: 425px) {
+    .hero {
+        padding-top: 40px;
+    }
+
+    .hero-slider-container {
+        height: 300px;
+        /* Restored a bit more height for text overlay */
+    }
+
+    .slider-nav-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero-display-title {
+        top: 80px;
+    }
+
+    .slider-navigation {
+        right: 10px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-slider-container {
+        height: 220px;
+    }
+
+    .hero-display-title {
+        top: 55px;
+        /* Reduced for smaller height */
+    }
+
+    .slider-nav-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .slider-nav-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-slider-container {
+        height: 180px;
+    }
+
+    .hero-display-title {
+        top: 45px;
     }
 }

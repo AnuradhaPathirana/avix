@@ -183,13 +183,7 @@
 }
 
 @media (max-width: 1200px) {
-    .service-title-custom .display-outline {
-        font-size: 4rem;
-    }
-
-    .service-title-custom .display-gradient {
-        font-size: 3rem;
-    }
+    /* Titles now use global responsive sizes from index.css */
 }
 
 @media (max-width: 992px) {
@@ -200,14 +194,10 @@
 
     .services-text {
         order: -1;
-        align-items: center;
-        text-align: center;
         margin-bottom: var(--spacing-md);
-    }
-
-    .services-text .display-title {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        text-align: center;
     }
 
     .services-subtitle {
@@ -218,5 +208,60 @@
 @media (max-width: 576px) {
     .services-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 425px) {
+    .service-card {
+        padding: var(--spacing-md);
+    }
+
+    .service-card h3 {
+        font-size: var(--font-size-lg);
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Updated to match global standard for under 375 */
+    .service-title-custom .display-small {
+        font-size: 2rem !important;
+    }
+
+    .service-title-custom .display-outline {
+        font-size: 3rem !important;
+    }
+
+    .service-title-custom .display-gradient {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .service-card {
+        padding: var(--spacing-sm);
+    }
+
+    .service-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .service-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .services-text .display-title {
+        align-items: center;
+        text-align: center;
+        margin-bottom: var(--spacing-sm);
     }
 }

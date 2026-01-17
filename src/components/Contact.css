@@ -1,6 +1,6 @@
 .contact {
     background: var(--color-dark);
-    padding-top: var(--spacing-xxl);
+    padding-top: var(--spacing-xl);
     padding-bottom: 0;
     /* Removed padding */
     position: relative;
@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xxl);
+    margin-bottom: var(--spacing-xl);
     align-items: center;
     /* Center vertically */
 }
@@ -182,5 +182,41 @@
         flex-direction: column;
         gap: var(--spacing-sm);
         text-align: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .contact {
+        padding-top: var(--spacing-lg);
+    }
+
+    .big-text {
+        font-size: 2.5rem;
+    }
+
+    .contact-group h4 {
+        font-size: 0.75rem;
+    }
+
+    .contact-group p {
+        font-size: var(--font-size-base);
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .big-text {
+        font-size: 3.8rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .big-text {
+        font-size: 3.8rem;
     }
 }

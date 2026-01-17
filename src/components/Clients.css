@@ -159,6 +159,10 @@
 }
 
 @media (max-width: 992px) {
+    .clients {
+        padding-bottom: 0 !important;
+    }
+
     .clients-header {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -166,7 +170,6 @@
     }
 
     .clients-text {
-        text-align: center;
         margin: 0 auto;
     }
 
@@ -188,5 +191,27 @@
     .client-logo-card {
         width: 120px;
         height: 70px;
+    }
+}
+
+@media (max-width: 425px) {
+    .clients-header {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .header-image-wrapper {
+        max-width: 100%;
+        margin-top: var(--spacing-md);
+    }
+
+    .clients-subtitle {
+        font-size: var(--font-size-base);
+        text-align: center;
+    }
+
+    .client-logo-card {
+        width: 160px;
+        height: 100px;
+
     }
 }

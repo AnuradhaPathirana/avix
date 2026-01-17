@@ -53,13 +53,26 @@ const News = () => {
         return () => clearInterval(timer);
     }, []);
 
-    // Calculate transform: 
-    // Slide Width = 40% (To show 2.5 items: 100/40 = 2.5)
-    // Offset = 20% (To show half of the card on the left)
-    // translateX = - (currentSlide * 40 + 20)%
-    const slideWidth = 40;
-    const offset = 20;
-    const transformValue = -(currentSlide * slideWidth + offset);
+    // State for responsive slide width
+    const [slideConfig, setSlideConfig] = useState({ width: 40, offset: 20 });
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                setSlideConfig({ width: 100, offset: 0 });
+            } else if (window.innerWidth <= 992) {
+                setSlideConfig({ width: 50, offset: 0 });
+            } else {
+                setSlideConfig({ width: 40, offset: 20 });
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const transformValue = -(currentSlide * slideConfig.width + slideConfig.offset);
 
     return (
         <section className="news section" id="news">

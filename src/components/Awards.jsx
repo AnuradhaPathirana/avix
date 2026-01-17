@@ -84,7 +84,7 @@ const Awards = () => {
             <div className="container">
                 <div className="awards-content">
                     <div className="section-title">
-                        <h2 className="display-title" style={{ alignItems: 'center' }}>
+                        <h2 className="display-title">
                             <span className="display-small">Our</span>
                             <span className="display-outline">INDUSTRY</span>
                             <span className="display-gradient">AWARDS</span>
