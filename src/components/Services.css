@@ -1,0 +1,222 @@
+.services {
+    background: var(--color-dark-light);
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(123, 44, 191, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.services-content-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    /* More space for cards */
+    gap: var(--spacing-xxl);
+    align-items: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.services-text {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Custom Title Styling (Smaller) */
+.services-text .display-title {
+    align-items: flex-end;
+    text-align: right;
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-title-custom .display-outline {
+    font-size: 5rem;
+    /* Updated to 5rem */
+}
+
+.service-title-custom .display-gradient {
+    font-size: 3.5rem;
+    /* Smaller than global 5rem */
+}
+
+.services-subtitle {
+    text-align: right;
+    margin-top: 0;
+    max-width: 100%;
+}
+
+.service-card {
+    background: var(--color-dark);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: var(--transition-base);
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transition: all var(--transition-slow);
+    z-index: 0;
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    position: relative;
+    z-index: 1;
+}
+
+.service-card:hover .service-icon {
+    background: rgba(0, 212, 255, 0.2);
+    transform: scale(1.1) rotate(5deg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-icon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--color-primary);
+    transition: var(--transition-base);
+}
+
+.service-card:hover .service-icon svg {
+    color: var(--color-text);
+}
+
+.service-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: 0;
+    color: var(--color-text);
+    position: relative;
+    z-index: 1;
+    transition: var(--transition-base);
+}
+
+.service-card:hover h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+/* Description Hover Effect */
+.service-desc {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    transform: translateY(10px);
+}
+
+.service-card:hover .service-desc {
+    max-height: 100px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1200px) {
+    .service-title-custom .display-outline {
+        font-size: 4rem;
+    }
+
+    .service-title-custom .display-gradient {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .services-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .services-text {
+        order: -1;
+        align-items: center;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .services-text .display-title {
+        align-items: center;
+        text-align: center;
+    }
+
+    .services-subtitle {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

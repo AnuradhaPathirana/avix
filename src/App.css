@@ -1,0 +1,6 @@
+/* App specific styles if needed, currently handled by global index.css */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
